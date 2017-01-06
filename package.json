@@ -1,12 +1,22 @@
 {
+  "name": "heroku-nextjs-custom-server-express",
+  "version": "1.0.0",
+  "description": "Deploy Next.js server-side React apps using a custom Express server to Heroku",
   "scripts": {
-    "dev": "node server.js",
+    "dev": "node server.js -p $PORT",
     "build": "next build",
-    "start": "NODE_ENV=production node server.js"
+    "postinstall": "heroku-nextjs-build",
+    "start": "node server.js -p $PORT"
   },
   "dependencies": {
     "@mars/heroku-nextjs-build": "^1.0.1",
     "express": "^4.14.0",
     "next": "^2.0.0-beta"
-  }
+  },
+  "engines": {
+    "node": "6.9.x"
+  },
+  "cacheDirectories": [
+    "nextjs/node_modules"
+  ]
 }

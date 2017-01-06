@@ -1,13 +1,11 @@
 
-# Custom Express Server example
+# Custom Express Server example for Heroku
 
 ## How to use
 
-Download the example (or clone the repo)[https://github.com/zeit/next.js.git]:
-
 ```bash
-curl https://codeload.github.com/zeit/next.js/tar.gz/master | tar -xz --strip=2 next.js-master/examples/custom-server-express
-cd custom-server-express
+git clone https://github.com/mars/heroku-nextjs-custom-server-express
+cd heroku-nextjs-custom-server-express
 ```
 
 Install it and run:
@@ -17,13 +15,20 @@ npm install
 npm run dev
 ```
 
-Deploy it to the cloud with [now](https://zeit.co/now) ([download](https://zeit.co/download))
+Deploy it to the cloud with [Heroku](https://www.heroku.com)
 
 ```bash
-now
+git init
+(echo node_modules/ && echo .next/) >> .gitignore
+heroku create
+git add .
+git commit -m 'Next.js app on Heroku'
+git push heroku master
 ```
 
 ## The idea behind the example
+
+*A version of [Next's example/custom-server-express] revised to deploy to Heroku.*
 
 Most of the times the default Next server will be enough but sometimes you want to run your own server to customize routes or other kind of the app behavior. Next provides a [Custom server and routing](https://github.com/zeit/next.js#custom-server-and-routing) so you can customize as much as you want.
 
