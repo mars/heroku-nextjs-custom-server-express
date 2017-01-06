@@ -28,7 +28,7 @@ git push heroku master
 
 ## The idea behind the example
 
-*A version of [Next's example/custom-server-express] revised to deploy to Heroku.*
+*A version of [Next's example/custom-server-express](https://github.com/zeit/next.js/tree/master/examples/custom-server-express) revised to deploy to Heroku.*
 
 Most of the times the default Next server will be enough but sometimes you want to run your own server to customize routes or other kind of the app behavior. Next provides a [Custom server and routing](https://github.com/zeit/next.js#custom-server-and-routing) so you can customize as much as you want.
 
