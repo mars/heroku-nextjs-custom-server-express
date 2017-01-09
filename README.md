@@ -1,5 +1,5 @@
 
-# Custom Express Server example for Heroku
+# Next.js w/ Custom Express Server example for Heroku
 
 ## How to use
 
