@@ -5,7 +5,7 @@
   "scripts": {
     "dev": "node server.js -p $PORT",
     "build": "next build",
-    "postinstall": "heroku-nextjs-build",
+    "heroku-postbuild": "heroku-nextjs-build",
     "start": "node server.js -p $PORT"
   },
   "dependencies": {
