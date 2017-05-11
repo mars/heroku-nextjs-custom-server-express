@@ -5,18 +5,16 @@
   "scripts": {
     "dev": "node server.js -p $PORT",
     "build": "next build",
-    "heroku-postbuild": "heroku-nextjs-build",
+    "heroku-postbuild": "next build",
     "start": "node server.js -p $PORT"
   },
   "dependencies": {
-    "@mars/heroku-nextjs-build": "^2.0.0",
     "express": "^4.14.0",
-    "next": "^2.0.0"
+    "next": "^2.0.0",
+    "react": "^15.5.4",
+    "react-dom": "^15.5.4"
   },
   "engines": {
     "node": "6.9.x"
-  },
-  "cacheDirectories": [
-    "nextjs/node_modules"
-  ]
+  }
 }
