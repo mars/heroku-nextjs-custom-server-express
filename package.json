@@ -10,9 +10,9 @@
   },
   "dependencies": {
     "express": "^4.14.0",
-    "next": "^2.0.0",
-    "react": "^15.5.4",
-    "react-dom": "^15.5.4"
+    "next": "^3.0.3",
+    "react": "^15.4.2",
+    "react-dom": "^15.4.2"
   },
   "engines": {
     "node": "6.11.x"
