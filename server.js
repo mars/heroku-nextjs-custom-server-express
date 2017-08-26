@@ -9,16 +9,32 @@ const handle = app.getRequestHandler()
 app.prepare()
 .then(() => {
   const server = express()
+  
+  // Enforce SSL in production
+  if (!dev) {
+    server.use(function(req, res, next) {
+      // Heroku router indicates HTTPS connection w/ client
+      var proto = req.headers["x-forwarded-proto"];
+      if (proto === "https") {
+        res.set({
+          'Strict-Transport-Security': 'max-age=7776000' // 90-days
+        })
+        return next()
+      }
+      res.redirect("https://" + req.headers.host + req.url)
+    });
+  }
 
-  server.get('/a', (req, res) => {
-    return app.render(req, res, '/b', req.query)
-  })
-
-  server.get('/b', (req, res) => {
-    return app.render(req, res, '/a', req.query)
-  })
-
+  // Serve static assets first with cache control
+  server.use('/static', express.static(path.join(__dirname, 'static'), {
+    maxAge: dev ? '0' : '365d'
+  }));
+  
+  // Serve everything else with Next
   server.get('*', (req, res) => {
+    //res.set({
+    //  'Cache-Control': 'public, max-age=3600'
+    //})
     return handle(req, res)
   })
 
