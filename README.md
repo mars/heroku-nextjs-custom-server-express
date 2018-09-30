@@ -1,6 +1,8 @@
 
 # Next.js w/ Custom Express Server example for Heroku
 
+[![Greenkeeper badge](https://badges.greenkeeper.io/mars/heroku-nextjs-custom-server-express.svg)](https://greenkeeper.io/)
+
 ## How to use
 
 ```bash
