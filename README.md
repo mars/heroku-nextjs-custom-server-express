@@ -15,16 +15,20 @@ npm install
 npm run dev
 ```
 
-Deploy it to the cloud with [Heroku](https://www.heroku.com)
+Then, visit [http://localhost:3000/](http://localhost:3000/) in your web browser.
+
+Deploy it to the cloud with [Heroku](https://www.heroku.com):
+
+⚠️ *Requires installing [Heroku CLI](https://devcenter.heroku.com/articles/heroku-cli)*
 
 ```bash
-git init
-(echo node_modules/ && echo .next/) >> .gitignore
 heroku create
 git add .
 git commit -m 'Next.js app on Heroku'
 git push heroku master
 ```
+
+👉 An example deployment of master is running at [https://nextjs-server.herokuapp.com/](https://nextjs-server.herokuapp.com/).
 
 ## The idea behind the example
 
