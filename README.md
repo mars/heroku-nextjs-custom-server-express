@@ -28,6 +28,12 @@ git commit -m 'Next.js app on Heroku'
 git push heroku master
 ```
 
+Heroku auto-detects that this is a Node.js app, and then executes:
+
+* `npm install`
+* `npm run build`
+* and then launches the app `NODE_ENV=production npm start`.
+
 👉 An example deployment of master is running at [https://nextjs-server.herokuapp.com/](https://nextjs-server.herokuapp.com/).
 
 ## The idea behind the example
