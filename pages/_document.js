@@ -6,16 +6,7 @@ environment variables into a global JavaScript `env` object.
 */
 class EnvDocument extends Document {
   static async getInitialProps() {
-    let env = {};
-    if (process && process.env) {
-      env = Object.entries(process.env)
-        .filter(e => e[0].match(/^NEXT_APP_/))
-        .reduce((accum, [k, v]) => {
-          accum[k] = v;
-          return accum;
-        }, {});
-    }
-    return { env };
+    return { env: this.getEnv() };
   }
 
   render() {
@@ -34,6 +25,19 @@ class EnvDocument extends Document {
         </body>
       </Html>
     );
+  }
+
+  static getEnv() {
+    let env = {};
+    if (process && process.env) {
+      env = Object.entries(process.env)
+        .filter(e => e[0].match(/^NEXT_APP_/))
+        .reduce((accum, [k, v]) => {
+          accum[k] = v;
+          return accum;
+        }, {});
+    }
+    return env;
   }
 }
 
