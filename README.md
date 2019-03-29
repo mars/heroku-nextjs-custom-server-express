@@ -36,6 +36,12 @@ Heroku auto-detects that this is a Node.js app, and then executes:
 
 👉 An example deployment of master is running at [https://nextjs-server.herokuapp.com/](https://nextjs-server.herokuapp.com/).
 
+## Environment variables
+
+Next itself supports [build & runtime configuration](https://nextjs.org/docs/#exposing-configuration-to-the-server--client-side) through the **next.config.js** file.
+
+Use [Heroku config vars](https://devcenter.heroku.com/articles/config-vars) within your React components, no rebuilds required! Simply set **next.config.js** values from the server's environment, the `process.env` object.
+
 ## The idea behind the example
 
 *A version of [Next's example/custom-server-express](https://github.com/zeit/next.js/tree/master/examples/custom-server-express) revised to [deploy to Heroku](https://github.com/mars/heroku-nextjs).*
