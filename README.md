@@ -36,6 +36,28 @@ Heroku auto-detects that this is a Node.js app, and then executes:
 
 👉 An example deployment of master is running at [https://nextjs-server.herokuapp.com/](https://nextjs-server.herokuapp.com/).
 
+## Runtime environment variables
+
+Use [Heroku config vars](https://devcenter.heroku.com/articles/config-vars) within your React components, no rebuilds required!
+
+This app includes a [custom Document](https://nextjs.org/docs/#custom-document) ([`pages/_document.js`](pages/_document.js)) that captures server-side `NEXT_APP_*` environment variables into a global JavaScript `env` object.
+
+For example, set env vars when running the app:
+
+```bash
+# Local dev
+NEXT_APP_NAME=howdybot npm run dev
+
+# On Heroku
+heroku config:set NEXT_APP_NAME=howdybot
+```
+
+…and then use them within React components via `env`:
+
+```jsx
+  <p>{env.NEXT_APP_NAME}</p>
+```
+
 ## The idea behind the example
 
 *A version of [Next's example/custom-server-express](https://github.com/zeit/next.js/tree/master/examples/custom-server-express) revised to [deploy to Heroku](https://github.com/mars/heroku-nextjs).*
